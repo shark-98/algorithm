@@ -1,0 +1,23 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "算法与数据结构",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shark-98/algorithm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shark-98/algorithm/issues"
+  },
+  "homepage": "https://github.com/shark-98/algorithm#readme",
+  "dependencies": {
+    "vitest": "^0.28.5"
+  }
+}
