@@ -2,6 +2,8 @@ export class TreeNode {
   key: unknown;
   left: TreeNode | null;
   right: TreeNode | null;
+  lTag?: number;
+  rTag?: number;
 
   constructor(key: unknown) {
     this.key = key;
