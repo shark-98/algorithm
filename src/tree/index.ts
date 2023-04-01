@@ -4,11 +4,16 @@ export class TreeNode {
   right: TreeNode | null;
   lTag?: number;
   rTag?: number;
+  [propName: string]: any
 
   constructor(key: unknown) {
     this.key = key;
     this.left = null
     this.right = null
+  }
+
+  get isTree() {
+    return true
   }
 
   insertLeft(node: TreeNode) {
