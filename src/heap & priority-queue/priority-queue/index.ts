@@ -1,5 +1,11 @@
+export enum HeapType {
+  Max,
+  Min
+}
+
 export class priorityQueue {
   size: number;
+  type: HeapType;
   count: number;
   private _data: number[];
 
@@ -9,8 +15,9 @@ export class priorityQueue {
   // 选择从1开始，左子节点会少一步+1的运算
   private rootIndex: number = 1;
 
-  constructor(_size: number) {
+  constructor(_size: number, _type: HeapType = HeapType.Max) {
     this.size = _size;
+    this.type = _type;
     this.count = 0;
     this._data = []
   }
@@ -41,10 +48,13 @@ export class priorityQueue {
     this._data[i1] = this._data[i2]
     this._data[i2] = temp
   }
+  private isNext = (val: number, fVal: number) => {
+    return (this.type === HeapType.Max && val > fVal) || (this.type === HeapType.Min && val < fVal)
+  }
   private up_update(index: number) {
     let fIndex = this.getFatherIndex(index)
 
-    while (fIndex >= this.rootIndex && this._data[index] > this._data[fIndex]) {
+    while (fIndex >= this.rootIndex && this.isNext(this._data[index], this._data[fIndex])) {
       this.swap(index, fIndex)
 
       index = fIndex
@@ -65,12 +75,12 @@ export class priorityQueue {
     while (lIndex <= this.count) {
       let pos = index
 
-      if (this._data[lIndex] > this._data[pos]) {
+      if (this.isNext(this._data[lIndex], this._data[pos])) {
         pos = lIndex
       }
 
       let rIndex = this.getRightChildrenIndex(index)
-      if (rIndex <= this.count && this._data[rIndex] > this._data[pos]) {
+      if (rIndex <= this.count && this.isNext(this._data[rIndex], this._data[pos])) {
         pos = rIndex
       }
 
