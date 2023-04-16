@@ -7,7 +7,7 @@ export class priorityQueue {
   size: number;
   type: HeapType;
   count: number;
-  private _data: number[];
+  private _data: any[];
 
   // data下标 从0开始 还是 从1开始:
   // 从0开始: 左子节点: 2 * i + 1、右子节点: 2 * i + 2
@@ -61,7 +61,7 @@ export class priorityQueue {
       fIndex = this.getFatherIndex(index)
     }
   }
-  push(val: number): boolean {
+  push(val: any): boolean {
     if (this.full()) return false
 
     this.count += 1
