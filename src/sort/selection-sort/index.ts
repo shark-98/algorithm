@@ -1,3 +1,4 @@
+import { swap } from "../../shared";
 import { checkQualified, ReturnT, SortRule } from "../index";
 
 /**
@@ -19,9 +20,7 @@ export const selectionSort = (arr: number[], rule: SortRule = SortRule.ASC): Ret
     }
 
     if (index !== i) {
-      const temp = arr[i]
-      arr[i] = arr[index]
-      arr[index] = temp
+      swap(arr, i, index)
       exchangeCount++
     }
   }

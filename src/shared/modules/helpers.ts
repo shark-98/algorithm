@@ -13,9 +13,7 @@ export const cached = (fn: Function) => {
 /**
  * 生成n个元素值为[0, 5000]的数组
  */
-export const getRandomArr = (n: number) => {
-  return Array.from({ length: n }, () => Math.floor(Math.random() * (n + 1)))
-};
+export const getRandomArr = (n: number) => Array.from({ length: n }, () => Math.floor(Math.random() * (n + 1)))
 
 /**
  * 缓存随机数组
@@ -44,3 +42,12 @@ export const getExpendTime = <R>(fn: (...args: any[]) => R): { res: R, expendTim
  * 深拷贝
  */
 export const cloneDeep = (val: any) => JSON.parse(JSON.stringify(val || ''))
+
+/**
+ * 交换
+ */
+export const swap = (arr: any[], i: number, j: number) => {
+  const temp = arr[i]
+  arr[i] = arr[j]
+  arr[j] = temp
+};
