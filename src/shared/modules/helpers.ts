@@ -23,17 +23,17 @@ export const getRandomArrCached = cached(getRandomArr);
 /**
  * 获得函数运行耗时
  */
-export const getExpendTime = <R>(fn: (...args: any[]) => R): { res: R, expendTime: string } => {
+export const getExpendTime = <R>(fn: (...args: any[]) => R): { arr: R, expendTime: string } => {
   const startTime = new Date().getTime()
 
-  const res = fn()
+  const arr = fn()
 
   const endTime = new Date().getTime()
 
   const expendTime = `耗时：${(endTime - startTime) / 1000}s`
 
   return {
-    res,
+    arr,
     expendTime
   }
 };

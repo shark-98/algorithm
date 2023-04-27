@@ -18,18 +18,6 @@ export const checkQualified = (a: number, b: number, rule: SortRule): boolean =>
 };
 
 /**
- * 排序函数返回值类型
- */
-export type ReturnT = {
-  /** 数据源 */
-  arr: number[],
-  /** 循环次数 */
-  count?: number,
-  /** 交换次数 */
-  exchangeCount?: number,
-}
-
-/**
  * 校验数组是否有序
  */
 export const checkOrderedSequence = (arr: number[], rule: SortRule): boolean => {
