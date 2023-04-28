@@ -5,8 +5,9 @@ import { insertSort, unGuarderInsertSort } from './insert-sort';
 import { selectionSort } from './selection-sort';
 import { shellSort, shellSortHibbard } from './shell-sort';
 import { bubbleSort, bubbleSort2 } from './bubble-sort';
+import { quickSort } from './quick-sort';
 
-const n = 8000
+const n = 5000
 const rule = SortRule.ASC
 
 const todo = (mockArr: number[], rule: SortRule) => {
@@ -43,6 +44,10 @@ const todo = (mockArr: number[], rule: SortRule) => {
     })
     it('冒泡排序优化', () => {
       testFn(bubbleSort2, '冒泡排序优化')
+    })
+
+    it('快速排序', () => {
+      testFn(quickSort, '快速排序')
     })
   }
 }
