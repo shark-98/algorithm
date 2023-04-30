@@ -5,7 +5,7 @@ import { insertSort, unGuarderInsertSort } from './insert-sort';
 import { selectionSort } from './selection-sort';
 import { shellSort, shellSortHibbard } from './shell-sort';
 import { bubbleSort, bubbleSort2 } from './bubble-sort';
-import { quickSort } from './quick-sort';
+import { quickSort, quickSort1, quickSort2, quickSort3, quickSort4 } from './quick-sort';
 
 const n = 5000
 const rule = SortRule.ASC
@@ -48,6 +48,18 @@ const todo = (mockArr: number[], rule: SortRule) => {
 
     it('快速排序', () => {
       testFn(quickSort, '快速排序')
+    })
+    it('快速排序-优化1', () => {
+      testFn(quickSort1, '快速排序-优化1')
+    })
+    it('快速排序-优化2', () => {
+      testFn(quickSort2, '快速排序-优化2')
+    })
+    it('快速排序-优化3', () => {
+      testFn(quickSort3, '快速排序-优化3')
+    })
+    it('快速排序-优化4', () => {
+      testFn(quickSort4, '快速排序-优化4')
     })
   }
 }
