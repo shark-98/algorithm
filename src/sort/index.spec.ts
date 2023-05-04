@@ -7,6 +7,7 @@ import { shellSort, shellSortHibbard } from './shell-sort';
 import { bubbleSort, bubbleSort2 } from './bubble-sort';
 import { quickSort, quickSort1, quickSort2, quickSort3, quickSort4 } from './quick-sort';
 import { mergeSort } from './merge-sort';
+import { radixSort } from './redix-sort';
 
 const n = 5000
 const rule = SortRule.ASC
@@ -65,6 +66,10 @@ const todo = (mockArr: number[], rule: SortRule) => {
 
     it('归并排序', () => {
       testFn(mergeSort, '归并排序')
+    })
+
+    it('基数排序', () => {
+      testFn(radixSort, '基数排序')
     })
   }
 }
