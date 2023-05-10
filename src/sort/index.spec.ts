@@ -11,12 +11,13 @@ import { radixSort } from './redix-sort';
 
 const n = 5000
 const rule = SortRule.ASC
+const IS_CONSOLE = false
 
 const todo = (mockArr: number[], rule: SortRule) => {
   return () => {
     const testFn = (fn: Function, name: string) => {
       const { arr, expendTime } = getExpendTime(() => fn(cloneDeep(mockArr), rule))
-      console.log(`${name}——`, expendTime);
+      IS_CONSOLE && console.log(`${name}——`, expendTime);
       expect(checkOrderedSequence(arr, rule)).toBe(true)
     }
 
